@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     platform.textContent = form.platform.value;
     newGameItem.appendChild(platform);
 
+    const publisher = document.createElement('li');
+    publisher.textContent = form.publisher.value;
+    newGameItem.appendChild(publisher);
+
     return newGameItem;
 
   };
