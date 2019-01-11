@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Console Games</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+
+    <h1>New Game:</h1>
+
+    <form id="new-game-form">
+
+      <label for="title" class="primary">Title:</label>
+      <input id="title" type="text">
+        <br>
+      <label for="platform">Platform:</label>
+      <select id="platform" class="primary" name="platform">
+        <option value="Nintendo 64">Nintendo 64</option>
+        <option value="Playstation">Playstation</option>
+        <option value="Playstation 2">Playstation 2</option>
+      </select>
+        <br>
+      <label for="publisher" class="primary">Publisher:</label>
+      <input id="publisher" type="text">
+
+      <p>Genre:</p>
+      <div id="genre">
+        <div id="genre1-labels">
+          <label for="action">Action</label>
+            <br>
+          <label for="fighting">Fighting</label>
+            <br>
+          <label for="sports">Sports</label>
+        </div>
+        <div id="genre1-boxes">
+          <input type="checkbox" name="action">
+          <br>
+          <input type="checkbox" name="fighting">
+          <br>
+          <input type="checkbox" name="sports">
+        </div>
+          <br>
+        <div id="genre2-labels">
+          <label for="adventure">Adventure</label>
+            <br>
+          <label for="platformer">Platformer</label>
+            <br>
+          <label for="racing">Racing</label>
+        </div>
+        <div id="genre2-boxes">
+          <input type="checkbox" name="adventure">
+            <br>
+          <input type="checkbox" name="platformer">
+            <br>
+          <input type="checkbox" name="racing">
+        </div>
+      </div>
+
+      <label for="single-player">Single-player</label><input type="radio" name="single-player" value="single-player">
+      <label for="multiplayer">Multiplayer</label><input type="radio" name="multiplayer" value="multiplayer">
+        <br>
+      <label for="release-date">Release Date:</label>
+      <input type="date" name="release-date" value="release-date">
+
+    </form>
+
+    <h2>Games List:</h2>
+
+  </body>
+</html>
