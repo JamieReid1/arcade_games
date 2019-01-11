@@ -19,19 +19,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const createNewGameItem = function(form) {
 
-    const newGameItem = document.createElement('ul');
+    const newGameItem = document.createElement('div');
+    newGameItem.setAttribute('id', 'item-div');
 
-    const title = document.createElement('li');
-    title.textContent = `Title: ${form.title.value}`;
-    newGameItem.appendChild(title);
+    const newGameItemKey = document.createElement('div');
+    newGameItemKey.setAttribute('id', 'key-div');
+    const newGameItemValue = document.createElement('div');
+    newGameItemValue.setAttribute('id', 'value-div');
 
-    const platform = document.createElement('li');
-    platform.textContent = `Platform: ${form.platform.value}`;
-    newGameItem.appendChild(platform);
+    const titleKey = document.createElement('h4');
+    titleKey.textContent = 'Title:';
+    newGameItemKey.appendChild(titleKey);
+    const titleValue = document.createElement('li');
+    titleValue.textContent = form.title.value;
+    newGameItemValue.appendChild(titleValue);
 
-    const publisher = document.createElement('li');
-    publisher.textContent = `Publisher: ${form.publisher.value}`;
-    newGameItem.appendChild(publisher);
+    const platformKey = document.createElement('h4');
+    platformKey.textContent = 'Platform:';
+    newGameItemKey.appendChild(platformKey);
+    const platformValue = document.createElement('li');
+    platformValue.textContent = form.platform.value;
+    newGameItemValue.appendChild(platformValue);
+
+    const publisherKey = document.createElement('h4');
+    publisherKey.textContent = 'Publisher:';
+    newGameItemKey.appendChild(publisherKey);
+    const publisherValue = document.createElement('li');
+    publisherValue.textContent = form.publisher.value;
+    newGameItemValue.appendChild(publisherValue);
 
     const cboxes = Array.from(document.querySelectorAll('#genre'));
     const boxArr = cboxes.filter(box => box.checked === true);
@@ -41,9 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let showGenres = "";
     genresArr.forEach(genre => showGenres += genre + "\xa0\xa0\xa0");
 
-    const genre = document.createElement('li');
-    genre.textContent = `Genre: ${showGenres}`;
-    newGameItem.appendChild(genre);
+    const genreKey = document.createElement('h4');
+    genreKey.textContent = 'Genre:';
+    newGameItemKey.appendChild(genreKey);
+    const genreValue = document.createElement('li');
+    genreValue.textContent = showGenres;
+    newGameItemValue.appendChild(genreValue);
 
     const radios = Array.from(document.querySelectorAll('#modes'));
     const radioArr = radios.filter(radio => radio.checked === true);
@@ -51,20 +69,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const modesArr = radioArr.map(radio => radio.value);
 
     let showModes = "";
-    modesArr.forEach(mode => showModes += mode + " \xa0\xa0\xa0");
+    modesArr.forEach(mode => showModes += mode + "\xa0\xa0\xa0");
 
-    const modes = document.createElement('li');
-    modes.textContent = `Modes: ${showModes}`;
-    newGameItem.appendChild(modes);
+    const modeKey = document.createElement('h4');
+    modeKey.textContent = 'Mode:';
+    newGameItemKey.appendChild(modeKey);
+    const modeValue = document.createElement('li');
+    modeValue.textContent = showModes;
+    newGameItemValue.appendChild(modeValue);
 
     const showDate = form.date.value.split("-").reverse().join("/");
     console.log(showDate);
 
-    const releaseDate = document.createElement('li');
-    releaseDate.textContent = `Release Date: ${showDate}`;
-    newGameItem.appendChild(releaseDate);
+    const dateKey = document.createElement('h4');
+    dateKey.textContent = 'Release Date:';
+    newGameItemKey.appendChild(dateKey);
+    const dateValue = document.createElement('li');
+    dateValue.textContent = showDate;
+    newGameItemValue.appendChild(dateValue);
 
-    event.target.reset();
+    newGameItem.appendChild(newGameItemKey);
+    newGameItem.appendChild(newGameItemValue);
+
+    // event.target.reset();
 
     return newGameItem;
   };
