@@ -38,14 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const cboxes = Array.from(document.querySelectorAll('#genre'));
     const boxArr = cboxes.filter(box => box.checked === true);
 
-    const values = boxArr.map(box => box.value);
+    const genresArr = boxArr.map(box => box.value);
 
-    let show = "";
-    values.forEach(value => show += value + " ");
+    let showGenres = "";
+    genresArr.forEach(genre => showGenres += genre + "\xa0\xa0\xa0");
 
     const genre = document.createElement('li');
-    genre.textContent = `Genre: ${show}`;
+    genre.textContent = `Genre: ${showGenres}`;
     newGameItem.appendChild(genre);
+
+    const radios = Array.from(document.querySelectorAll('#modes'));
+    const radioArr = radios.filter(radio => radio.checked === true);
+
+    const modesArr = radioArr.map(radio => radio.value);
+
+    let showModes = "";
+    modesArr.forEach(mode => showModes += mode + " \xa0\xa0\xa0");
+
+    const modes = document.createElement('li');
+    modes.textContent = `Modes: ${showModes}`;
+    newGameItem.appendChild(modes);
 
     return newGameItem;
 
