@@ -18,21 +18,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   };
 
+
   const createNewGameItem = function(form) {
 
     const newGameItem = document.createElement('ul');
 
     const title = document.createElement('li');
-    title.textContent = form.title.value;
+    title.textContent = `Title: ${form.title.value}`;
     newGameItem.appendChild(title);
 
     const platform = document.createElement('li');
-    platform.textContent = form.platform.value;
+    platform.textContent = `Platform: ${form.platform.value}`;
     newGameItem.appendChild(platform);
 
     const publisher = document.createElement('li');
-    publisher.textContent = form.publisher.value;
+    publisher.textContent = `Publisher: ${form.publisher.value}`;
     newGameItem.appendChild(publisher);
+
+    const cboxes = Array.from(document.querySelectorAll('#genre'));
+    const boxArr = cboxes.filter(box => box.checked === true);
+
+    const values = boxArr.map(box => box.value);
+
+    let show = "";
+    values.forEach(value => show += value + " ");
+
+    const genre = document.createElement('li');
+    genre.textContent = `Genre: ${show}`;
+    newGameItem.appendChild(genre);
 
     return newGameItem;
 
