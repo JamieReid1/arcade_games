@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const gamesList = document.querySelector('#games-list');
     const newGameItem = createNewGameItem(event.target)
     gamesList.appendChild(newGameItem);
-
-
   };
 
 
@@ -59,6 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     modes.textContent = `Modes: ${showModes}`;
     newGameItem.appendChild(modes);
 
-    return newGameItem;
+    const showDate = form.date.value.split("-").reverse().join("/");
+    console.log(showDate);
 
+    const releaseDate = document.createElement('li');
+    releaseDate.textContent = `Release Date: ${showDate}`;
+    newGameItem.appendChild(releaseDate);
+
+    event.target.reset();
+
+    return newGameItem;
   };

@@ -18,6 +18,7 @@
         <br>
       <label for="platform">Platform:</label>
       <select id="platform" class="primary" name="platform">
+        <option selected disabled hidden></option>
         <option value="Nintendo 64">Nintendo 64</option>
         <option value="Playstation">Playstation</option>
         <option value="Playstation 2">Playstation 2</option>
@@ -66,8 +67,8 @@
       <label for="single-player">Single-player</label><input id="modes" type="radio" name="single-player" value="Single-player">
       <label for="multiplayer">Multiplayer</label><input id="modes" type="radio" name="multiplayer" value="Multiplayer">
         <br>
-      <label for="release-date">Release Date:</label>
-      <input type="date" name="release-date" value="release-date">
+      <label for="date">Release Date:</label>
+      <input id="date" type="date" name="date" value="date">
         <br>
       <input type="submit" name="save" value="save">
 
