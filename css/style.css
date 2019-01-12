@@ -61,16 +61,37 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0;
 }
 
-#item-div {
-  display: flex;
+#item-form {
   padding: 10px;
   margin: 10px 20px;
   border: 1px solid rgba(37, 93, 168, 0.3);
   border-radius: 20px;
   background-color: rgba(237, 237, 237, 0.8);
   color: rgba(37, 93, 168, 1);
+  /* justify-content: center;
+  align-content: center; */
+}
+
+#item-div {
+  display: flex;
+}
+
+#value-div {
+  margin-right: 10px;
+}
+
+#button-delete {
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+  padding: 1px 10px;
+  margin: 0;
+  width: 100px;
 }
 
 h4 {

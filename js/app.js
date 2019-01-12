@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     gamesList.appendChild(newGameItem);
   };
 
-
   const createNewGameItem = function(form) {
+
+    const newGameItemForm = document.createElement('form');
+    newGameItemForm.setAttribute('id', 'item-form');
 
     const newGameItem = document.createElement('div');
     newGameItem.setAttribute('id', 'item-div');
@@ -79,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     newGameItemValue.appendChild(modeValue);
 
     const showDate = form.date.value.split("-").reverse().join("/");
-    console.log(showDate);
 
     const dateKey = document.createElement('h4');
     dateKey.textContent = 'Release Date:';
@@ -91,7 +92,34 @@ document.addEventListener('DOMContentLoaded', () => {
     newGameItem.appendChild(newGameItemKey);
     newGameItem.appendChild(newGameItemValue);
 
+    newGameItemForm.appendChild(newGameItem);
+
+    const deleteButton = document.createElement('input');
+    deleteButton.setAttribute('id', 'button-delete');
+    deleteButton.setAttribute('type', 'submit');
+    deleteButton.setAttribute('name', 'delete');
+    deleteButton.setAttribute('value', 'delete');
+    newGameItemForm.appendChild(deleteButton);
+
     // event.target.reset();
 
-    return newGameItem;
+    return newGameItemForm;
+
+
   };
+
+  document.addEventListener('newGameItemForm', () => {
+
+    const deleteItemForm = document.querySelector('#item-form');
+    deleteItemForm.addEventListener('submit', handleDeleteItemFormSubmit);
+
+    const handleDeleteItemSubmit = function(index) {
+      event.preventDefault();
+      console.dir(event)
+
+      const items = document.querySelectorAll('#item-div');
+      const itemsArr = Array.from(items);
+      return itemsArr.splice(index, 1)
+    };
+
+  });
