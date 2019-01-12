@@ -94,6 +94,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     newGame.appendChild(newGameItemKey);
     newGame.appendChild(newGameItemValue);
+
+    const screenshot = document.createElement('img');
+    if (titleValue.textContent === 'GoldenEye 007') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/3/36/GoldenEye007box.jpg');
+      } else if (titleValue.textContent === 'Super Mario 64') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/6/6a/Super_Mario_64_box_cover.jpg');
+      } else if (titleValue.textContent === 'Mario Kart 64') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/7/7e/Mario_Kart_64box.png');
+      } else if (titleValue.textContent === 'Donkey Kong 64') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/a/ae/DonkeyKong64CoverArt.jpg');
+      } else if (titleValue.textContent === 'WWF No Mercy') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/9/90/NoMercyGameBox.jpg');
+      } else if (titleValue.textContent === 'Jonah Lomu Rugby') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/6/63/Johna_lomu_rugby_cover.jpg');
+      } else if (titleValue.textContent === 'Tony Hawks Pro Skater 2') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/4/41/Tony_Hawk%27s_Pro_Skater_2_cover.png');
+      } else if (titleValue.textContent === 'Grand Theft Auto 2') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/2/2e/GTA2_Box_art.jpg');
+      } else if (titleValue.textContent === 'Street Fighter 2 Turbo') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/2/29/Super_Street_Fighter_II_Turbo_%28flyer%29.png');
+      } else if (titleValue.textContent === 'WWF Smackdown 2') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/0/0a/WWFSmackDown2KnowYourRole.jpg');
+      } else if (titleValue.textContent === 'Need for Speed: Underground') {
+        screenshot.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/a/a0/Nfsu-win-cover.jpg');
+      };
+
+    newGameItem.appendChild(screenshot);
+
     newGameItem.appendChild(newGame);
 
     const deleteButton = document.createElement('button');
@@ -101,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     deleteButton.textContent = 'delete';
     newGameItem.appendChild(deleteButton);
 
-    // event.target.reset();
+    event.target.reset();
 
     return newGameItem;
 
@@ -109,29 +137,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const handleDeleteAllClick = function (event) {
     const gamesList = document.querySelector('#games-list');
-    console.log(event);
+    console.dir(event);
     gamesList.innerHTML = '';
   };
 
   document.addEventListener('newGameItem', () => {
 
-    const deleteItem = document.querySelector('#button-delete');
-    deleteItem.addEventListener('click', handleDeleteItemClick);
+    const deleteItemButton = document.querySelector('#button-delete');
+    deleteItemButton.addEventListener('click', handleDeleteItemClick);
 
   });
 
   const handleDeleteItemClick = function(event) {
-    // event.preventDefault();
-    console.log(event);
+    const gamesList = document.querySelector('#games-list');
+    console.dir(event);
 
-    let gamesList = document.querySelector('#games-list');
-
-    const games = gamesList.childNodes;
-    const gamesArr = Array.from(games);
-
-    gamesList = gamesArr;
-
-    console.dir(gamesArr);
+    // const games = gamesList.childNodes;
+    // const gamesArr = Array.from(games);
+    //
+    // gamesList = gamesArr;
+    //
+    // console.dir(gamesArr);
 
     // gamesList.removeChild(gamesList.childNodes[index]);
 

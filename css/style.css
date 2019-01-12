@@ -89,6 +89,12 @@ button {
   margin: 0;
 }
 
+img {
+  border-radius: 20px;
+  width: 260px;
+  height: 150px;
+}
+
 h4 {
   margin: 0;
   padding: 2px 5px;
