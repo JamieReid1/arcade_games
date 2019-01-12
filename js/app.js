@@ -4,12 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const newGameform = document.querySelector('#new-game-form');
   newGameform.addEventListener('submit', handleNewGameFormSubmit);
 
+  const deleteAllButton = document.querySelector('#button-delete-all');
+  deleteAllButton.addEventListener('click', handleDeleteAllClick);
+
 });
 
   const handleNewGameFormSubmit = function(event) {
     event.preventDefault();
 
-    console.dir(event);
+    // console.dir(event);
 
     const gamesList = document.querySelector('#games-list');
     const newGameItem = createNewGameItem(event.target)
@@ -18,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const createNewGameItem = function(form) {
 
-    const newGameItemForm = document.createElement('form');
-    newGameItemForm.setAttribute('id', 'item-form');
-
     const newGameItem = document.createElement('div');
     newGameItem.setAttribute('id', 'item-div');
+
+    const newGame = document.createElement('div');
+    newGame.setAttribute('id', 'key-value-div');
 
     const newGameItemKey = document.createElement('div');
     newGameItemKey.setAttribute('id', 'key-div');
@@ -89,37 +92,47 @@ document.addEventListener('DOMContentLoaded', () => {
     dateValue.textContent = showDate;
     newGameItemValue.appendChild(dateValue);
 
-    newGameItem.appendChild(newGameItemKey);
-    newGameItem.appendChild(newGameItemValue);
+    newGame.appendChild(newGameItemKey);
+    newGame.appendChild(newGameItemValue);
+    newGameItem.appendChild(newGame);
 
-    newGameItemForm.appendChild(newGameItem);
-
-    const deleteButton = document.createElement('input');
+    const deleteButton = document.createElement('button');
     deleteButton.setAttribute('id', 'button-delete');
-    deleteButton.setAttribute('type', 'submit');
-    deleteButton.setAttribute('name', 'delete');
-    deleteButton.setAttribute('value', 'delete');
-    newGameItemForm.appendChild(deleteButton);
+    deleteButton.textContent = 'delete';
+    newGameItem.appendChild(deleteButton);
 
     // event.target.reset();
 
-    return newGameItemForm;
-
+    return newGameItem;
 
   };
 
-  document.addEventListener('newGameItemForm', () => {
+  const handleDeleteAllClick = function (event) {
+    const gamesList = document.querySelector('#games-list');
+    console.log(event);
+    gamesList.innerHTML = '';
+  };
 
-    const deleteItemForm = document.querySelector('#item-form');
-    deleteItemForm.addEventListener('submit', handleDeleteItemFormSubmit);
+  document.addEventListener('newGameItem', () => {
 
-    const handleDeleteItemSubmit = function(index) {
-      event.preventDefault();
-      console.dir(event)
-
-      const items = document.querySelectorAll('#item-div');
-      const itemsArr = Array.from(items);
-      return itemsArr.splice(index, 1)
-    };
+    const deleteItem = document.querySelector('#button-delete');
+    deleteItem.addEventListener('click', handleDeleteItemClick);
 
   });
+
+  const handleDeleteItemClick = function(event) {
+    // event.preventDefault();
+    console.log(event);
+
+    let gamesList = document.querySelector('#games-list');
+
+    const games = gamesList.childNodes;
+    const gamesArr = Array.from(games);
+
+    gamesList = gamesArr;
+
+    console.dir(gamesArr);
+
+    // gamesList.removeChild(gamesList.childNodes[index]);
+
+  };
