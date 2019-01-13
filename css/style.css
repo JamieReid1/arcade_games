@@ -1,44 +1,151 @@
 
 body {
-  color: rgba(37, 93, 168, 1);
-  font-family: sans-serif;
+  color: rgb(42, 188, 13);
+  font-family: 'Source Code Pro', monospace;
   font-size: 12px;
+  background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg');
+  background-repeat: no-repeat;
+  background-size: 1280px 612px;
+  background-attachment: fixed;
 }
 
 h1 {
   font-weight: normal;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 50px;
+  text-shadow:0 0 5px rgb(113, 206, 117);
 }
 
-#new-game-form {
+form {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 40px;
+  background-attachment: fixed;
+  font-size: 20px;
+  text-shadow:0 0 1px rgb(113, 206, 117);
   width: 30%;
   border-radius: 8px;
   border: 1px solid rgba(37, 93, 168, 0.3);
-  background-color: rgba(237, 237, 237, 0.8);
-  padding: 20px;
+  background-color: black;
+  padding: 55px 15px 30px 30px;
   line-height: 25px;
+  height: 315px;
+  width: 545px;
+  margin-left: 336px;
+  margin-top: 40px;
+  box-shadow: 0 0 15px white;
 }
 
-#new-game-form input {
-  border: 1px solid rgba(37, 93, 168, 0.3);
+input {
+  background-color: black;
+  color: rgb(42, 188, 13);
+  border: 1px solid rgb(42, 188, 13);
   border-radius: 4px;
-  font-family: sans-serif;
+  font-family: 'Source Code Pro', monospace;
   padding-left: 5px;
+  box-shadow: 0 0 2px rgb(113, 206, 117);
 }
 
-input:-webkit-autofill,
+input:focus {
+    outline: none !important;
+    border:1px solid rgb(42, 188, 13);
+    box-shadow: 0 0 15px rgb(113, 206, 117);
+}
+
+input[type='checkbox'] {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance:none;
+  border: 1px solid rgb(42, 188, 13);
+  box-shadow: 0 0 2px rgb(113, 206, 117);
+}
+
+input[type='checkbox']:checked {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance:none;
+  background-color: rgb(42, 188, 13);
+  outline: none !important;
+  border:1px solid rgb(42, 188, 13);
+  box-shadow: 0 0 15px rgb(113, 206, 117);
+}
+
+input[type='radio'] {
+  position: relative;
+  top: 5px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance:none;
+  border: 1px solid rgb(42, 188, 13);
+  box-shadow: 0 0 2px rgb(113, 206, 117);
+}
+
+input[type='radio']:checked {
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance:none;
+  background-color: rgb(42, 188, 13);
+  outline: none !important;
+  border:1px solid rgb(42, 188, 13);
+  box-shadow: 0 0 15px rgb(113, 206, 117);
+}
+
+input::-webkit-datetime-edit-day-field:focus,
+input::-webkit-datetime-edit-month-field:focus,
+input::-webkit-datetime-edit-year-field:focus {
+    background-color: rgb(42, 188, 13);
+    color: white;
+    outline: none;
+}
+
+select {
+  background-color: black;
+  border-color: rgb(42, 188, 13);
+  font-family: 'Source Code Pro', monospace;
+  color: rgb(42, 188, 13);
+  box-shadow: 0 0 2px rgb(113, 206, 117);
+}
+
+select:focus {
+    outline: none !important;
+    border:1px solid rgb(42, 188, 13);
+    box-shadow: 0 0 15px rgb(113, 206, 117);
+}
+
+/* input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
-    background-color: #FFFFFF !important;
-    color: #555 !important;
-    -webkit-box-shadow: 0 0 0 1000px white inset !important;
-    -webkit-text-fill-color: #555555 !important;
-    }
+    background-color: black !important;
+    color: rgb(42, 188, 13) !important;
+    -webkit-box-shadow: 0 0 0 1000px black inset !important;
+    -webkit-text-fill-color: rgb(42, 188, 13)!important;
+    -webkit-font-family: 'Source Code Pro', monospace;
+    } */
 
 #button-submit {
-  background-color: rgba(37, 93, 168, 0.9);
-  color: white;
-  border: none;
+  background-color: black;
+  color: rgb(42, 188, 13);
+  border: 1px solid rgb(42, 188, 13);
   border-radius: 4px;
   width: 60px;
   height: 20px;
@@ -58,21 +165,26 @@ input:-webkit-autofill:focus {
   flex-wrap: wrap;
   justify-content: center;
   padding: 0;
+  min-height: 200px;
 }
 
 #item-div {
+  z-index: 999;
   padding: 10px;
   margin: 10px 20px;
-  border: 1px solid rgba(37, 93, 168, 0.3);
+  border: 2px solid rgb(42, 188, 13);
   border-radius: 20px;
-  background-color: rgba(237, 237, 237, 0.8);
-  color: rgba(37, 93, 168, 1);
-  /* justify-content: center; */
+  background-color: black;
+  color: rgb(42, 188, 13);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-content: center;
 }
 
 #key-value-div {
   display: flex;
+  flex-direction: row;
 }
 
 #value-div {
@@ -87,12 +199,14 @@ button {
   justify-content: center;
   padding: 1px 10px 3px 10px;
   margin: 0;
+  align-self: center;
 }
 
 img {
   border-radius: 20px;
   width: 260px;
   height: 150px;
+  align-self: center;
 }
 
 h4 {
