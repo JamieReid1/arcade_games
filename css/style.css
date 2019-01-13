@@ -156,6 +156,17 @@ input:-webkit-autofill:focus {
   height: 20px;
 }
 
+#button-submit:active {
+    outline: none !important;
+    box-shadow: 0 0 15px 2px white !important;
+}
+
+#button-submit:focus {
+    outline: 0 !important;
+    box-shadow: none;
+
+  }
+
 #genre-input p {
   margin: 0 10px 0 0;
 }
@@ -198,7 +209,7 @@ input:-webkit-autofill:focus {
 
 button {
   color: white;
-  background-color: red;
+  background-color: rgb(249, 0, 0);
   border: none;
   border-radius: 5px;
   justify-content: center;
@@ -206,6 +217,15 @@ button {
   margin: 0;
   align-self: center;
 }
+
+button:active {
+    outline: none !important;
+    box-shadow: 0 0 15px 4px rgba(249, 0, 0, 1);
+}
+
+button:focus {
+    outline: 0 !important;
+  }
 
 img {
   border-radius: 20px;

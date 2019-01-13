@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const deleteAllButton = document.querySelector('#button-delete-all');
   deleteAllButton.addEventListener('click', handleDeleteAllClick);
 
+  document.addEventListener('newGameItem', () => {
+
+    const deleteItemButton = document.querySelector('#button-delete');
+    deleteItemButton.addEventListener('click', handleDeleteItemClick);
+
+  });
 });
 
   const handleNewGameFormSubmit = function(event) {
@@ -19,7 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     gamesList.appendChild(newGameItem);
   };
 
+  let itemID = 0;
+
   const createNewGameItem = function(form) {
+
+    itemID ++;
 
     const newGameItem = document.createElement('div');
     newGameItem.setAttribute('id', 'item-div');
@@ -141,16 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
     gamesList.innerHTML = '';
   };
 
-  document.addEventListener('newGameItem', () => {
-
-    const deleteItemButton = document.querySelector('#button-delete');
-    deleteItemButton.addEventListener('click', handleDeleteItemClick);
-
-  });
-
   const handleDeleteItemClick = function(event) {
     const gamesList = document.querySelector('#games-list');
     console.dir(event);
+    gamesList.innerHTML = '';
+
 
     // const games = gamesList.childNodes;
     // const gamesArr = Array.from(games);
