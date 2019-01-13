@@ -1,6 +1,6 @@
 
 body {
-  color: rgb(42, 188, 13);
+  color: white;
   font-family: 'Source Code Pro', monospace;
   font-size: 12px;
   background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg');
@@ -40,18 +40,18 @@ form {
 
 input {
   background-color: black;
-  color: rgb(42, 188, 13);
-  border: 1px solid rgb(42, 188, 13);
+  color: white;
+  border: 1px solid white;
   border-radius: 4px;
   font-family: 'Source Code Pro', monospace;
   padding-left: 5px;
-  box-shadow: 0 0 2px rgb(113, 206, 117);
+  box-shadow: 0 0 2px white;
 }
 
 input:focus {
     outline: none !important;
-    border:1px solid rgb(42, 188, 13);
-    box-shadow: 0 0 15px rgb(113, 206, 117);
+    border:1px solid white;
+    box-shadow: 0 0 15px white;
 }
 
 input[type='checkbox'] {
@@ -62,8 +62,8 @@ input[type='checkbox'] {
   -moz-appearance: none;
   -o-appearance: none;
   appearance:none;
-  border: 1px solid rgb(42, 188, 13);
-  box-shadow: 0 0 2px rgb(113, 206, 117);
+  border: 1px solid white;
+  box-shadow: 0 0 2px white;
 }
 
 input[type='checkbox']:checked {
@@ -74,10 +74,10 @@ input[type='checkbox']:checked {
   -moz-appearance: none;
   -o-appearance: none;
   appearance:none;
-  background-color: rgb(42, 188, 13);
+  background-color: white;
   outline: none !important;
-  border:1px solid rgb(42, 188, 13);
-  box-shadow: 0 0 15px rgb(113, 206, 117);
+  border:1px solid white;
+  box-shadow: 0 0 15px white;
 }
 
 input[type='radio'] {
@@ -91,8 +91,8 @@ input[type='radio'] {
   -moz-appearance: none;
   -o-appearance: none;
   appearance:none;
-  border: 1px solid rgb(42, 188, 13);
-  box-shadow: 0 0 2px rgb(113, 206, 117);
+  border: 1px solid white;
+  box-shadow: 0 0 2px white;
 }
 
 input[type='radio']:checked {
@@ -103,32 +103,37 @@ input[type='radio']:checked {
   -moz-appearance: none;
   -o-appearance: none;
   appearance:none;
-  background-color: rgb(42, 188, 13);
+  background-color: white;
   outline: none !important;
-  border:1px solid rgb(42, 188, 13);
-  box-shadow: 0 0 15px rgb(113, 206, 117);
+  border:1px solid white;
+  box-shadow: 0 0 15px white;
 }
 
 input::-webkit-datetime-edit-day-field:focus,
 input::-webkit-datetime-edit-month-field:focus,
 input::-webkit-datetime-edit-year-field:focus {
-    background-color: rgb(42, 188, 13);
+    background-color: white;
+    color: black;
+    outline: none;
+}
+input::-webkit-calendar-picker-indicator {
+    background-color: black;
     color: white;
     outline: none;
 }
 
 select {
   background-color: black;
-  border-color: rgb(42, 188, 13);
+  border-color: white;
   font-family: 'Source Code Pro', monospace;
-  color: rgb(42, 188, 13);
-  box-shadow: 0 0 2px rgb(113, 206, 117);
+  color: white;
+  box-shadow: 0 0 2px white;
 }
 
 select:focus {
     outline: none !important;
-    border:1px solid rgb(42, 188, 13);
-    box-shadow: 0 0 15px rgb(113, 206, 117);
+    border:1px solid white;
+    box-shadow: 0 0 15px white;
 }
 
 /* input:-webkit-autofill,
@@ -144,8 +149,8 @@ input:-webkit-autofill:focus {
 
 #button-submit {
   background-color: black;
-  color: rgb(42, 188, 13);
-  border: 1px solid rgb(42, 188, 13);
+  color: white;
+  border: 1px solid white;
   border-radius: 4px;
   width: 60px;
   height: 20px;
@@ -172,10 +177,10 @@ input:-webkit-autofill:focus {
   z-index: 999;
   padding: 10px;
   margin: 10px 20px;
-  border: 2px solid rgb(42, 188, 13);
+  border: 2px solid white;
   border-radius: 20px;
   background-color: black;
-  color: rgb(42, 188, 13);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
